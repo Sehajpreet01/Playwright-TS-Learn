@@ -1,0 +1,30 @@
+To install playwright:
+npm init playwright@latest
+
+To install typescript:
+npm i -g typescript  
+
+To run tests:
+npx playwright test
+
+To run headed:
+npx playwright test --headed 
+
+
+To generate html test reports:
+npx playwright show-report
+
+
+To running the Example Test in UI Mode:
+npx playwright test --ui
+
+
+To updating Playwright:
+npm install -D @playwright/test@latest
+# Also download new browser binaries and their dependencies:
+npx playwright install --with-deps
+
+
+To check version:
+npx playwright --version
+
