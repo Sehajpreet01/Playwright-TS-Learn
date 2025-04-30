@@ -1,8 +1,8 @@
-To install playwright:
+To Install Playwright:
+
+To install :
 npm init playwright@latest
 
-To install typescript:
-npm i -g typescript  
 
 To run tests:
 npx playwright test
