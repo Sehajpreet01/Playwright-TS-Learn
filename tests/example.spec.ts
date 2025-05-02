@@ -170,43 +170,9 @@ test('test form', async ({ page }) => {
 });
 
 
-test.describe('Login Functionality @smoke', () => {
-  
-  let loginPage: LoginPage;
 
-  test.beforeAll(() => {
-    console.log('Global setup before all tests');
-  });
 
-  test.beforeEach(async ({ page }) => {
-    loginPage = new LoginPage(page);
-    await loginPage.goto();
-  });
 
-  test.afterEach(() => {
-    console.log('🧹 Cleanup after each test');
-  });
 
-  test('Valid Login', async () => {
-    await loginPage.login('admin', 'admin123');
-    const welcomeText = await loginPage.getWelcomeText();
-    await expect(welcomeText).toHaveText('Welcome');
-    
-    const logoutButton = await loginPage.isLogoutVisible();
-    await expect(logoutButton).toBeVisible();
-  });
 
-  test.skip('This test is skipped for now', async () => {
-    // Not implemented yet
-  });
 
-  test('Failing test example', async ({ page }) => {
-    test.fail(); // Intentional failure
-    await expect(page.locator('#nonexistent')).toBeVisible();
-  });
-
-  test('Example domain test', async ({ page }) => {
-    await page.goto('https://example.com');
-    await expect(page).toHaveTitle(/Example Domain/);
-  });
-});

@@ -11,15 +11,15 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.usernameInput = '#username';
+    this.usernameInput = '#user-name';
     this.passwordInput = '#password';
-    this.submitButton = 'button[type="submit"]';
-    this.logoutButton = '#logout';
-    this.welcomeHeader = 'h1';
+    this.submitButton = '#login-button';
+    this.logoutButton = '#react-burger-menu-btn';
+    this.welcomeHeader = '.app_logo';
   }
 
   async goto(): Promise<void> {
-    await this.page.goto('https://amazon.in/login');
+    await this.page.goto('https://www.saucedemo.com/');
   }
 
   async login(username: string, password: string): Promise<void> {
