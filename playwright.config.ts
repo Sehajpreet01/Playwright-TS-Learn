@@ -13,6 +13,9 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
  */
 export default defineConfig({
   testDir: './tests',
+  /* Maximum time one test can run for */
+  timeout: 30000,
+  
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -27,9 +30,13 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-
+    screenshot: 'only-on-failure',
+    video: 'on-first-retry',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    
+    /* Set timeout for actions like click, fill, etc. */
+    actionTimeout: 30000,
 
     // Store sensitive data in environment variables instead of hardcoding
     // Create a .env file at the root of your project with your credentials:
@@ -46,7 +53,10 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { 
+        ...devices['Desktop Firefox']
+      },
+      timeout: 60000  // 60 seconds - Firefox-specific timeout
     },
 
     {

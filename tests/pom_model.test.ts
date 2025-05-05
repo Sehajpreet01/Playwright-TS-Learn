@@ -1,5 +1,7 @@
 import { test, expect, Page } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
+import { HomePage } from '../pages/HomePage';
+import { FeedbackPage } from '../pages/FeedbackPage';
 
 
 // Take screenshot only when a test fails #// This is a good practice to take screenshots when a test fails 
@@ -28,6 +30,7 @@ test.afterEach(async ({ page }, testInfo) => {
 
   test.describe('Login Functionality @smoke', () => {
   
+    
     let loginPage: LoginPage;
   
     test.beforeAll(() => {
@@ -60,13 +63,30 @@ test.afterEach(async ({ page }, testInfo) => {
     //   // Not implemented yet
     // });
   
-    test('Failing test example', async ({ page }) => {
-      test.fail(); // Intentional failure
-      await expect(page.locator('#nonexistent')).toBeVisible();
-    });
+    // test('Failing test example', async ({ page }) => {
+    //   test.fail(); // Intentional failure
+    //   await expect(page.locator('#nonexistent')).toBeVisible();
+    // });
   
     test('Example domain test', async ({ page }) => {
       await page.goto('https://example.com');
       await expect(page).toHaveTitle(/Example Domain/);
+    });
+    });
+  test.describe('Full E2E Flow: Login, Home, Checkout, Logout', () => {
+    let homePage: HomePage;
+    let feedbackPage: FeedbackPage;
+    let loginPage: LoginPage;
+
+    test.beforeEach(async ({ page }) => {
+      homePage = new HomePage(page);
+      feedbackPage = new FeedbackPage(page);
+      loginPage = new LoginPage(page);
+      await loginPage.goto();
+    });
+
+    test('Checkout a product', async () => {
+      await loginPage.login('standard_user', 'secret_sauce');
+      await homePage.addProductToCart('Sauce Labs Backpack');
     });
   });
