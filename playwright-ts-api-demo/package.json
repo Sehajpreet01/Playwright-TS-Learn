@@ -1,0 +1,18 @@
+{
+  "name": "playwright-ts-api-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:api": "playwright test tests/api.test.ts",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "Sehajpreet Singh Pannu",
+  "license": "ISC",
+  "description": "A demo project for API testing with Playwright and TypeScript",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}

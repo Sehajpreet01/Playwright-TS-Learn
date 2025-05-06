@@ -8,6 +8,7 @@ export class HomePage {
     private productSortContainer: Locator;
     private itemsInCart: Locator;
     private addToCartButton: Locator;
+    private checkoutButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -17,6 +18,7 @@ export class HomePage {
         this.productSortContainer = page.locator('[data-test="product_sort_container"]');
         this.itemsInCart = page.locator('.shopping_cart_badge');
         this.addToCartButton = page.locator('#add-to-cart-sauce-labs-backpack');
+        this.checkoutButton = page.locator('#checkout');
     }
 
     async goto(): Promise<void> {
@@ -73,5 +75,9 @@ export class HomePage {
     async getProductDescription(productName: string): Promise<string> {
         const descElement = this.page.locator(`.inventory_item:has-text("${productName}") .inventory_item_desc`);
         return await descElement.innerText();
+    }
+
+    async checkout(): Promise<void> {
+        await this.checkoutButton.click();
     }
 } 

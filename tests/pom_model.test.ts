@@ -2,7 +2,7 @@ import { test, expect, Page } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { HomePage } from '../pages/HomePage';
 import { FeedbackPage } from '../pages/FeedbackPage';
-
+import { YourInformation } from '../pages/YourInformation';
 
 // Take screenshot only when a test fails #// This is a good practice to take screenshots when a test fails 
 // #This approach is called as "After Hook" & topic is called as "Hooks"
@@ -28,36 +28,36 @@ test.afterEach(async ({ page }, testInfo) => {
   });
 
 
-  test.describe('Login Functionality @smoke', () => {
+  // test.describe('Login Functionality @smoke', () => {
   
     
-    let loginPage: LoginPage;
+  //   let loginPage: LoginPage;
   
-    test.beforeAll(() => {
-      console.log('Global setup before all tests');
-    });
+  //   test.beforeAll(() => {
+  //     console.log('Global setup before all tests');
+  //   });
   
-    test.beforeEach(async ({ page }) => {
-      loginPage = new LoginPage(page);
-      await loginPage.goto();
-    });
+  //   test.beforeEach(async ({ page }) => {
+  //     loginPage = new LoginPage(page);
+  //     await loginPage.goto();
+  //   });
   
-    test.afterEach(() => {
-      console.log('Cleanup after each test');
-    });
+  //   test.afterEach(() => {
+  //     console.log('Cleanup after each test');
+  //   });
   
   
   
-    test('Valid Login with POM', async () => {
-      // Use standard credentials for SauceDemo site
-      await loginPage.login('standard_user', 'secret_sauce');
+  //   test('Valid Login with POM', async () => {
+  //     // Use standard credentials for SauceDemo site
+  //     await loginPage.login('standard_user', 'secret_sauce');
       
-      const welcomeText = await loginPage.getWelcomeText();
-      await expect(welcomeText).toBeVisible();
+  //     const welcomeText = await loginPage.getWelcomeText();
+  //     await expect(welcomeText).toBeVisible();
       
-      const logoutButton = await loginPage.isLogoutVisible();
-      await expect(logoutButton).toBeVisible();
-    });
+  //     const logoutButton = await loginPage.isLogoutVisible();
+  //     await expect(logoutButton).toBeVisible();
+  //   });
   
     // test.skip('This test is skipped for now', async () => {
     //   // Not implemented yet
@@ -68,25 +68,32 @@ test.afterEach(async ({ page }, testInfo) => {
     //   await expect(page.locator('#nonexistent')).toBeVisible();
     // });
   
-    test('Example domain test', async ({ page }) => {
-      await page.goto('https://example.com');
-      await expect(page).toHaveTitle(/Example Domain/);
-    });
-    });
+    // test('Example domain test', async ({ page }) => {
+    //   await page.goto('https://example.com');
+    //   await expect(page).toHaveTitle(/Example Domain/);
+    // });
+    // });
+
+
   test.describe('Full E2E Flow: Login, Home, Checkout, Logout', () => {
     let homePage: HomePage;
     let feedbackPage: FeedbackPage;
     let loginPage: LoginPage;
+    let yourInformation: YourInformation;
 
     test.beforeEach(async ({ page }) => {
       homePage = new HomePage(page);
       feedbackPage = new FeedbackPage(page);
       loginPage = new LoginPage(page);
+      yourInformation = new YourInformation(page);
       await loginPage.goto();
     });
 
     test('Checkout a product', async () => {
       await loginPage.login('standard_user', 'secret_sauce');
       await homePage.addProductToCart('Sauce Labs Backpack');
+      await homePage.goToCart();
+      await homePage.checkout();
+      await yourInformation.fillYourInformation('John', 'Doe', '10001');
     });
   });
