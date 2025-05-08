@@ -28,51 +28,51 @@ test.afterEach(async ({ page }, testInfo) => {
   });
 
 
-  // test.describe('Login Functionality @smoke', () => {
+  test.describe('Login Functionality @smoke', () => {
   
     
-  //   let loginPage: LoginPage;
+    let loginPage: LoginPage;
   
-  //   test.beforeAll(() => {
-  //     console.log('Global setup before all tests');
-  //   });
+    test.beforeAll(() => {
+      console.log('Global setup before all tests');
+    });
   
-  //   test.beforeEach(async ({ page }) => {
-  //     loginPage = new LoginPage(page);
-  //     await loginPage.goto();
-  //   });
+    test.beforeEach(async ({ page }) => {
+      loginPage = new LoginPage(page);
+      await loginPage.goto();
+    });
   
-  //   test.afterEach(() => {
-  //     console.log('Cleanup after each test');
-  //   });
+    test.afterEach(() => {
+      console.log('Cleanup after each test');
+    });
   
   
   
-  //   test('Valid Login with POM', async () => {
-  //     // Use standard credentials for SauceDemo site
-  //     await loginPage.login('standard_user', 'secret_sauce');
+    test('Valid Login with POM', async () => {
+      // Use standard credentials for SauceDemo site
+      await loginPage.login('standard_user', 'secret_sauce');
       
-  //     const welcomeText = await loginPage.getWelcomeText();
-  //     await expect(welcomeText).toBeVisible();
+      const welcomeText = await loginPage.getWelcomeText();
+      await expect(welcomeText).toBeVisible();
       
-  //     const logoutButton = await loginPage.isLogoutVisible();
-  //     await expect(logoutButton).toBeVisible();
-  //   });
+      const logoutButton = await loginPage.isLogoutVisible();
+      await expect(logoutButton).toBeVisible();
+    });
   
-    // test.skip('This test is skipped for now', async () => {
-    //   // Not implemented yet
-    // });
+    test.skip('This test is skipped for now', async () => {
+      // Not implemented yet
+    });
   
-    // test('Failing test example', async ({ page }) => {
-    //   test.fail(); // Intentional failure
-    //   await expect(page.locator('#nonexistent')).toBeVisible();
-    // });
+    test('Failing test example', async ({ page }) => {
+      test.fail(); // Intentional failure
+      await expect(page.locator('#nonexistent')).toBeVisible();
+    });
   
-    // test('Example domain test', async ({ page }) => {
-    //   await page.goto('https://example.com');
-    //   await expect(page).toHaveTitle(/Example Domain/);
-    // });
-    // });
+    test('Example domain test', async ({ page }) => {
+      await page.goto('https://example.com');
+      await expect(page).toHaveTitle(/Example Domain/);
+    });
+    });
 
 
   test.describe('Full E2E Flow: Login, Home, Checkout, Logout', () => {
