@@ -22,10 +22,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
       - name: Run Playwright tests
         run: npx playwright test
 
-      - name: Upload test results (optional)
+      - name: Upload test results
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: playwright-results
