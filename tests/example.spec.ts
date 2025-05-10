@@ -64,14 +64,14 @@ test('Login to Amazon.in', async ({ page }) => {
 
     // Wait for email field and fill
     await page.waitForSelector('input[name="email"]', { state: 'visible', timeout: 30000 });
-    await page.fill('input[name="email"]', process.env.EMAIL || '');
+    await page.fill('input[name="email"]', process.env.AMAZON_EMAIL || '');
 
     // Click continue
     await page.click('input[id="continue"]');
 
     // Wait for password field
     await page.waitForSelector('input[name="password"]', { state: 'visible', timeout: 30000 });
-    await page.fill('input[name="password"]', process.env.PASSWORD || '');
+    await page.fill('input[name="password"]', process.env.AMAZON_PASSWORD || '');
 
     // Click sign-in
     await page.click('#signInSubmit', { timeout: 30000 });

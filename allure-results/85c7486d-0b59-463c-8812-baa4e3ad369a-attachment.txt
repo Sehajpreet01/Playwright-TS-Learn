@@ -1,0 +1,139 @@
+Accessibility Violations: [
+  {
+    id: 'aria-allowed-attr',
+    impact: 'critical',
+    tags: [ 'cat.aria', 'wcag2a', 'wcag412', 'EN-301-549', 'EN-9.4.1.2' ],
+    description: "Ensure an element's role supports its ARIA attributes",
+    help: 'Elements must only use supported ARIA attributes',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/aria-allowed-attr?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'aria-hidden-focus',
+    impact: 'serious',
+    tags: [
+      'cat.name-role-value',
+      'wcag2a',
+      'wcag412',
+      'TTv5',
+      'TT6.a',
+      'EN-301-549',
+      'EN-9.4.1.2'
+    ],
+    description: 'Ensure aria-hidden elements are not focusable nor contain focusable elements',
+    help: 'ARIA hidden element must not be focusable or contain focusable elements',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/aria-hidden-focus?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'heading-order',
+    impact: 'moderate',
+    tags: [ 'cat.semantics', 'best-practice' ],
+    description: 'Ensure the order of headings is semantically correct',
+    help: 'Heading levels should only increase by one',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/heading-order?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'image-redundant-alt',
+    impact: 'minor',
+    tags: [ 'cat.text-alternatives', 'best-practice' ],
+    description: 'Ensure image alternative is not repeated as text',
+    help: 'Alternative text of images should not be repeated as text',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/image-redundant-alt?application=axeAPI',
+    nodes: [
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object], [Object], [Object], [Object],
+      [Object], [Object]
+    ]
+  },
+  {
+    id: 'label-title-only',
+    impact: 'serious',
+    tags: [ 'cat.forms', 'best-practice' ],
+    description: 'Ensure that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes',
+    help: 'Form elements should have a visible label',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/label-title-only?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'landmark-banner-is-top-level',
+    impact: 'moderate',
+    tags: [ 'cat.semantics', 'best-practice' ],
+    description: 'Ensure the banner landmark is at top level',
+    help: 'Banner landmark should not be contained in another landmark',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/landmark-banner-is-top-level?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'landmark-no-duplicate-banner',
+    impact: 'moderate',
+    tags: [ 'cat.semantics', 'best-practice' ],
+    description: 'Ensure the document has at most one banner landmark',
+    help: 'Document should not have more than one banner landmark',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/landmark-no-duplicate-banner?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'landmark-unique',
+    impact: 'moderate',
+    tags: [ 'cat.semantics', 'best-practice' ],
+    description: 'Ensure landmarks are unique',
+    help: 'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'list',
+    impact: 'serious',
+    tags: [
+      'cat.structure',
+      'wcag2a',
+      'wcag131',
+      'EN-301-549',
+      'EN-9.1.3.1'
+    ],
+    description: 'Ensure that lists are structured correctly',
+    help: '<ul> and <ol> must only directly contain <li>, <script> or <template> elements',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/list?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'page-has-heading-one',
+    impact: 'moderate',
+    tags: [ 'cat.semantics', 'best-practice' ],
+    description: 'Ensure that the page, or at least one of its frames contains a level-one heading',
+    help: 'Page should contain a level-one heading',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/page-has-heading-one?application=axeAPI',
+    nodes: [ [Object] ]
+  },
+  {
+    id: 'region',
+    impact: 'moderate',
+    tags: [ 'cat.keyboard', 'best-practice' ],
+    description: 'Ensure all page content is contained by landmarks',
+    help: 'All page content should be contained by landmarks',
+    helpUrl: 'https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI',
+    nodes: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ]
+  }
+]

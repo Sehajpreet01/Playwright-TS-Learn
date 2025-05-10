@@ -1,0 +1,46 @@
+Login test failed: page.waitForSelector: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('input[name="password"]') to be visible
+    58 × locator resolved to hidden <input type="password" name="password" maxlength="1024" spellcheck="false" aria-required="true" class="a-input-text hide" id="ap-credential-autofill-hint"/>
+
+    at D:\All Work\playwright-ts-demo\tests\example.spec.ts:73:16 {
+  [Symbol(step)]: {
+    stepId: 'pw:api@12',
+    location: {
+      file: 'D:\\All Work\\playwright-ts-demo\\tests\\example.spec.ts',
+      line: 73,
+      column: 16
+    },
+    category: 'pw:api',
+    title: 'page.waitForSelector(input[name="password"])',
+    apiName: 'page.waitForSelector',
+    params: {
+      selector: 'input[name="password"]',
+      state: 'visible',
+      timeout: 30000
+    },
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@12'
+    },
+    complete: [Function: complete],
+    endWallTime: 1746798557551,
+    error: {
+      message: 'Error: page.waitForSelector: Test timeout of 30000ms exceeded.\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('input[name="password"]') to be visible\x1B[22m\n` +
+        '\x1B[2m    58 × locator resolved to hidden <input type="password" name="password" maxlength="1024" spellcheck="false" aria-required="true" class="a-input-text hide" id="ap-credential-autofill-hint"/>\x1B[22m\n',
+      stack: 'Error: page.waitForSelector: Test timeout of 30000ms exceeded.\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('input[name="password"]') to be visible\x1B[22m\n` +
+        '\x1B[2m    58 × locator resolved to hidden <input type="password" name="password" maxlength="1024" spellcheck="false" aria-required="true" class="a-input-text hide" id="ap-credential-autofill-hint"/>\x1B[22m\n' +
+        '\n' +
+        '    at D:\\All Work\\playwright-ts-demo\\tests\\example.spec.ts:73:16',
+      cause: undefined
+    }
+  }
+}

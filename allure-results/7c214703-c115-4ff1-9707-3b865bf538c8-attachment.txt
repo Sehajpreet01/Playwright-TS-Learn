@@ -1,0 +1,61 @@
+Login test failed: page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('input[id="continue"]')
+    - locator resolved to <input id="continue" type="submit" class="a-button-input" aria-describedby="legalTextRow" aria-labelledby="continue-announce"/>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - performing click action
+
+    at D:\All Work\playwright-ts-demo\tests\example.spec.ts:70:16 {
+  name: 'TimeoutError',
+  [Symbol(step)]: {
+    stepId: 'pw:api@11',
+    location: {
+      file: 'D:\\All Work\\playwright-ts-demo\\tests\\example.spec.ts',
+      line: 70,
+      column: 16
+    },
+    category: 'pw:api',
+    title: 'page.click(input[id="continue"])',
+    apiName: 'page.click',
+    params: { selector: 'input[id="continue"]' },
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@11'
+    },
+    complete: [Function: complete],
+    endWallTime: 1746813313535,
+    error: {
+      message: 'TimeoutError: page.click: Timeout 30000ms exceeded.\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('input[id="continue"]')\x1B[22m\n` +
+        '\x1B[2m    - locator resolved to <input id="continue" type="submit" class="a-button-input" aria-describedby="legalTextRow" aria-labelledby="continue-announce"/>\x1B[22m\n' +
+        '\x1B[2m  - attempting click action\x1B[22m\n' +
+        '\x1B[2m    - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+        '\x1B[2m    - element is visible, enabled and stable\x1B[22m\n' +
+        '\x1B[2m    - scrolling into view if needed\x1B[22m\n' +
+        '\x1B[2m    - done scrolling\x1B[22m\n' +
+        '\x1B[2m    - performing click action\x1B[22m\n',
+      stack: 'TimeoutError: page.click: Timeout 30000ms exceeded.\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('input[id="continue"]')\x1B[22m\n` +
+        '\x1B[2m    - locator resolved to <input id="continue" type="submit" class="a-button-input" aria-describedby="legalTextRow" aria-labelledby="continue-announce"/>\x1B[22m\n' +
+        '\x1B[2m  - attempting click action\x1B[22m\n' +
+        '\x1B[2m    - waiting for element to be visible, enabled and stable\x1B[22m\n' +
+        '\x1B[2m    - element is visible, enabled and stable\x1B[22m\n' +
+        '\x1B[2m    - scrolling into view if needed\x1B[22m\n' +
+        '\x1B[2m    - done scrolling\x1B[22m\n' +
+        '\x1B[2m    - performing click action\x1B[22m\n' +
+        '\n' +
+        '    at D:\\All Work\\playwright-ts-demo\\tests\\example.spec.ts:70:16',
+      cause: undefined
+    }
+  }
+}

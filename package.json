@@ -2,6 +2,8 @@
   "devDependencies": {
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.3",
+    "allure-playwright": "^3.2.1",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
@@ -9,5 +11,9 @@
   "dependencies": {
     "axe-core": "^4.10.3",
     "dotenv": "^16.5.0"
+  },
+  "scripts": {
+    "debug": "cross-env PWDEBUG=1 npx playwright test",
+    "debug:example": "cross-env PWDEBUG=1 npx playwright test tests/example.spec.ts"
   }
 }

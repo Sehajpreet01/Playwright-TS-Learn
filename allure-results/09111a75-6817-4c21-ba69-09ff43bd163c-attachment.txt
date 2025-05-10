@@ -1,0 +1,3 @@
+Global setup before all tests
+Cleanup after each test
+Test failed in chromium. Screenshot saved to screenshots/Failing-test-example-chromium-2025-05-09T17-54-32-365Z-failure.png
