@@ -32,16 +32,21 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
 
+      - name: Show Node and npm version
+        run: |
+          node -v
+          npm -v
+
       - name: Upload Playwright HTML report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: playwright-report
           path: playwright-report/
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: test-results
           path: test-results/
