@@ -93,7 +93,7 @@ test.afterEach(async ({ page }, testInfo) => {
       await loginPage.login('standard_user', 'secret_sauce');
       await homePage.addProductToCart('Sauce Labs Backpack');
       await homePage.goToCart();
-      await homePage.checkout();
+      await homePage.checkout();   
       await yourInformation.fillYourInformation('John', 'Doe', '10001');
     });
   });
